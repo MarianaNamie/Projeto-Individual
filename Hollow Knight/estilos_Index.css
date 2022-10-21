@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    background-color: #081322;
+}
+
+.topo {
+    height: 15px;
+    background-color: #077584;
+    width: cover;
+}
+
+.banner {
+    display: flex;
+}
+
+.banner img{
+    width: 929px;
+    margin-left: auto;
+}
+
+.banner .degrade1 {
+    /* background-color: #081322; */
+    background-image: linear-gradient(to right, #081322 , rgb(8, 19, 34, 0));
+    width: 50%;
+}
