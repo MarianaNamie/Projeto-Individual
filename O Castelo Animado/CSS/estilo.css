@@ -1,4 +1,5 @@
-/* navbar */
+/* Início do header */
+/* Início da navbar */
 body {
     margin: 0;
     background-color: white;
@@ -57,7 +58,7 @@ header {
 }
 
 .links .agora {
-    color: #164876;
+    color: #061F36;
 }
 
 .links a {
@@ -66,7 +67,8 @@ header {
  }
 
 .links a:hover {
-    color: #164876;
+    color: #061F36;
+    transition: 0.25s;
 }
 
 .links button{
@@ -82,27 +84,49 @@ header {
 }
 
 .links button:hover{
-    color: #164876;
-    border: solid 2px #164876;
+    color: #061F36;
+    border: solid 2px #061F36;
+    transition: 0.25s;
 }
 
 .text_banner {
     color: #E7E7DD;
     text-align: center;
-    border: solid 2px hotpink;
 }
 
 .text_banner h1 {
     font-family: 'Grandstander';
     font-size: 110px;
-    /* box-shadow: -3px 3px 3px #6d3c20; */
     text-shadow: 0px 4px 4px black;
+    margin-bottom: 50px;
 }
 
 .text_banner p {
     font-family: 'Merriweather';
     font-weight: 700;
     font-size: 25px;
-    /* box-shadow: -3px 3px 3px #6d3c20; */
     text-shadow: 0px 4px 4px black;
+    margin: 0%;
+    margin-top: 5px;
 }
+
+.text_banner button{
+    margin-top: 70px;
+    padding: 22px 24px;
+    border-radius: 100px;
+    background-color: transparent;
+    font-family: 'Merriweather';
+    font-size: 24px;
+    color: #EAC557;
+    border: solid 3px #EAC557;
+    cursor: pointer;
+}
+
+.text_banner button:hover{
+    background-color: rgba(231, 231, 221, 0.1);
+    box-shadow: 0px 2px 5px black;
+    transition: 0.25s;
+}
+
+/* Fim da navbar */
+/* Inicio da Curiosidade */
