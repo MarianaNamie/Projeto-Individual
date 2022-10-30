@@ -6,26 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Castelo Animado</title>
 
+    <link rel="icon" href="CSS/assets/favicon.png">
+
     <link rel="stylesheet" href="CSS/estilo.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Grandstander&family=Merriweather:wght@400;700&family=PT+Serif&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander&family=Merriweather:wght@400;600;700&family=PT+Serif&family=Playfair+Display:wght@400;800&display=swap" rel="stylesheet">
+
 </head>
 <body>
-
+<!-- BANNER -->
     <header>
         <div class="banner">
             <nav class="degradê">
                 <div class="container">
                     <a href="index.html"><img src="CSS/assets/logo.webp"></a>
                     <div class="links">
-                        <ul>
-                            <li class="agora">Home</li>
+                        <ul class="navbar">
+                            <li><a href="index.html" class="agora">Home</a></li>
                             <li class=""><a href="">Sobre Nós</a></li>
                             <li class=""><a href="">Trilha Sonora</a></li>
-                            <button>Login/Cadastro</button>
+                            <a href="#sessao1"><button>Login/Cadastro</button></a>
                         </ul>
                     </div>  
                 </div>
@@ -39,26 +41,57 @@
             </div>
         </div>
     </header>
-    <div class="curiosidade">
-        <div class="caixa">
-            <img src="CSS/assets/relogio-icon.png">
-            <p class="titulo">Tempo de Duração</p>
-            <p class="desc">O filme tem 1h 59min</p>
-        </div>
-        <div class="linha"></div>
-        <div class="caixa">
-            <img src="CSS/assets/filme-icon.png">
-            <p class="titulo">Origem</p>
-            <p class="desc"> É uma animação japonesa, produzida pelo Studio Ghibli</p>
-        </div>
-        <div class="linha"></div>
-        <div class="caixa">
-            <img src="CSS/assets/oscar-icon.png
-            <p class="titulo">Indicação ao Oscar</p>
-            <p class="desc">Foi indicado ao Oscar de Melhor Animação em 2006</p>
-        </div>
 
+    <!-- CURIOSIDADE -->
+    <div class="container">
+        <div class="curiosidade">
+            <div class="caixa">
+                <img src="CSS/assets/relogio-icon.png">
+                <p class="titulo">Tempo de Duração</p>
+                <p class="desc">O filme tem 1h 59min</p>
+            </div>
+            <div class="linha"></div>
+            <div class="caixa">
+                <img src="CSS/assets/filme-icon.png">
+                <p class="titulo">Origem</p>
+                <p class="desc"> É uma animação japonesa, produzida pelo Studio Ghibli</p>
+            </div>
+            <div class="linha"></div>
+            <div class="caixa">
+                <img src="CSS/assets/oscar-icon.png">
+                <p class="titulo">Indicação ao Oscar</p>
+                <p class="desc">Foi indicado ao Oscar de Melhor Animação em 2006</p>
+            </div>
+        </div>
     </div>
-
+<!-- SINOPSE -->
+    <div class="sinopse" id="sessao1">
+        <div class="imagem"></div>
+        <div class="fundo_verde">
+            <div class="texto">
+                <h1>SINOPSE</h1>
+                <p>Uma bruxa lança uma terrível maldição sobre a jovem Sophie transformando-a numa velha de 90 anos. Desesperada, ela embarca numa odisseia em busca do Castelo Andante, onde reside um misterioso feiticeiro que poderá ajudá-la a reverter o feitiço.</p>
+            </div>
+        </div>
+    </div>
+<!-- REPERCUSSÃO MUNDIAL -->
+    <div class="container">
+        <div class="texto">
+            <h1>Repercussão Mundial</h1>
+            <p>A história se passa em um reino fictício, onde a magia e a tecnologia do início do século XX são predominantes, no contexto de uma guerra com outro reino.</p>
+            <p>Inspirada pela oposição à invasão do Iraque pelos Estados Unidos em 2003, o filme contém fortes temas anti-guerra. Miyazaki afirmou que tinha muita raiva da guerra do Iraque, o que o levou a fazer um filme que ele achava que seria mal recebido nos EUA. Também explora o tema da velhice, retratando a idade positivamente como algo que concede liberdade ao protagonista. O filme também contém elementos feministas e traz mensagens sobre o valor da compaixão.
+            </p>
+            <p>O filme arrecadou US$ 190 milhões de dólares no Japão e US$ 236 milhões em todo o mundo, tornando-o um dos filmes japoneses mais bem-sucedidos financeiramente da história. O filme recebeu elogios da crítica, principalmente pelo seu visual e pela apresentação dos temas por Miyazaki. Ganhou vários prêmios, incluindo quatro Tokyo Anime Awards e um Nebula Award por Melhor Roteiro.</p>
+        </div>
+    </div>
+<!-- FOOTER -->
+    <div class="footer">
+        <div class="caixa_verde">
+            <div class="info">
+                <a href="index.html"><img src="CSS/assets/logo.webp"></a>
+                <p>Developed by Mariana Namie</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
