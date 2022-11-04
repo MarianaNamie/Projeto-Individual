@@ -1,0 +1,139 @@
+/* Início da navbar */
+body {
+    margin: 0;
+    background-color: white;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.banner {
+    height: 600px;
+    background: url(assets/sobre_nos.webp) no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-color: rgba(22, 72, 118, 0.25);
+    background-blend-mode: color;
+    border: solid 3px fuchsia;
+    display: flex;
+    flex-direction: column;
+}
+
+.degradê {
+    width: auto;
+    height: 104px;
+    background-image: linear-gradient(rgba(80, 173, 191, 1), rgba(0, 0, 0, 0));
+    display: flex;
+    border: solid 3px hotpink;
+}
+
+.container {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.links {
+    width: 50%;
+    font-family: 'PT Serif';
+    justify-content: end;
+}
+
+.container img {
+    height: 50px;
+}
+
+.navbar {
+    font-size: 20px;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: end;
+    justify-content: space-between;
+}
+
+.navbar .agora {
+    color: #061F36;
+}
+
+.navbar a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.navbar a:hover {
+    color: #061F36;
+    transition: 0.25s;
+}
+
+.navbar button {
+    border: solid 2px #FFFFFF;
+    border-radius: 0;
+    background-color: transparent;
+    font-size: 20px;
+    height: 46px;
+    width: 155px;
+    color: white;
+    font-family: 'PT Serif';
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.links button:hover {
+    color: #061F36;
+    border: solid 2px #061F36;
+    transition: 0.25s;
+}
+
+.text_banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 3px firebrick;
+}
+
+.text_banner h1 {
+    color: #E7E7DD;
+    text-align: center;
+    font-family: 'Grandstander';
+    font-size: 110px;
+    text-shadow: 0px 4px 4px black;
+}
+
+/* Início do Footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.caixa_verde {
+    background-color: #50ADBF;
+    height: 164px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.info img {
+    height: 50px;
+}
+
+.info p {
+    font-family: 'PT Serif';
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    margin-bottom: 0%;
+}
+/* Fim do Footer */
