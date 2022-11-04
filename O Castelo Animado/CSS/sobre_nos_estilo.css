@@ -120,39 +120,123 @@ html {
 }
 /* fim */
 /* início do sobre nós */
-.personagem {
-    border: solid 3px coral;
-}
 
 .tudo_aba{
-    border: solid 3px violet;
+    /* border: solid 3px violet; */
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .texto_sophie {
-    border: solid 3px mediumvioletred;
-    width: 45%;
+    /* border: solid 3px mediumvioletred; */
+    height: 500px;
+    width: 450px;
 }
 
 .texto_sophie h1{
-    margin-top: 0;
     text-align: center;
-    /* font-family: ; */
+    font-family: 'PT Serif';
+    font-size: 40px;
+    margin-bottom: 45px;
+}
+
+.texto_sophie p {
+    font-family: 'PT Serif';
+    font-size: 20px;
+    margin-top: 10px;
 }
 
 .foto_sophie{
-    border: solid 3px aquamarine;
-    height: 400px;
-    width: 45%;
+    /* border: solid 3px aquamarine; */
+    height: 500px;
+    width: 450px;
     background-image: url("assets/sobre_nos2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    border-radius: 5px;
+    box-shadow: 6px 6px 9px black;
 }
 
 /* fim do sobre nós */
+/* inicio da personalidade */
+
+.personalidade {
+    border: solid 3px hotpink;
+}
+
+.content {
+    border: solid 3px chartreuse;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+}
+
+.texto {
+    border: solid 3px chocolate;
+}
+
+.titulo {
+    border: solid 3px violet;
+}
+
+.titulo h1{
+    text-align: center;
+    font-family: 'PT Serif';
+    font-size: 45px;
+}
+
+.caixas {
+    border: solid 3px brown;
+    display: flex;
+    justify-content: space-between;
+}
+
+.caixa{
+    border: solid 8px #50ADBF;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.25s;
+}
+
+.caixa .img {
+    border: solid 3px firebrick;
+    width: 240px;
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caixa img {
+    border: solid 3px firebrick;
+    width: 55%;
+    height: 55%;
+}
+
+.txt {
+    border: solid 3px navy;
+    width: 240px;
+    display: none;
+}
+
+.caixa:hover {
+    height: 350px;
+    transition: 0.25s;
+}
+
+.txt:hover{
+    font-size: 10px;
+}
+
+/* fim da personalidade */
 /* Início do Footer */
 .footer {
     display: flex;

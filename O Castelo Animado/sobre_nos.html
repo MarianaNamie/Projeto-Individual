@@ -34,7 +34,7 @@
             </nav>
             <div class="texto_pai">
                 <div class="text_banner">
-                    <h1>O Castelo Animado</h1>
+                    <h1>Sobre Nós</h1>
                 </div>
             </div>
         </div>
@@ -58,29 +58,36 @@
 
     <div class="personalidade">
         <div class="container">
-            <div class="caixas">
-                <div class="caixa">
-                    <div class="img">
-                        <img src="">
-                    </div>
-                    <div class="txt">
-                        <p>Gosta de ser gentil</p>
+            <div class="content">
+                <div class="texto">
+                    <div class="titulo">
+                        <h1>Nossa Personalidade</h1>
                     </div>
                 </div>
-                <div class="caixa">
-                    <div class="img">
-                        <img src="">
+                <div class="caixas">
+                    <div class="caixa" id="caixa1" onmouseout="naoDizer()" onmouseover="dizerAlgo()">
+                        <div class="img">
+                            <img src="CSS/assets/valores1.png">
+                        </div>
+                        <div id="txt">
+                            <p>Gosta de ser gentil</p>
+                        </div>
                     </div>
-                    <div class="txt">
-                        <p>Não gosta de ser o centro das atenções</p>
+                    <div class="caixa">
+                        <div class="img">
+                            <img src="CSS/assets/valores2.png">
+                        </div>
+                        <div class="txt">
+                            <p>Não gosta de ser o centro das atenções</p>
+                        </div>
                     </div>
-                </div>
-                <div class="caixa">
-                    <div class="img">
-                        <img src="">
-                    </div>
-                    <div class="txt">
-                        <p>Age como uma pessoa mais velha</p>
+                    <div class="caixa">
+                        <div class="img">
+                            <img src="CSS/assets/valores3.png">
+                        </div>
+                        <div class="txt">
+                            <p>Age como uma pessoa mais velha</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -97,3 +104,17 @@
 </div>
 </body>
 </html>
+
+<script>
+    function naoDizer() {
+        txt.style.display = 'none';
+    }
+    function dizerAlgo() {
+        txt.innerHTML = `Gosta de ser gentil`;
+        txt.style.display = 'block';
+        txt.style.transition = '0.25s';
+        // txt.style.font-size = '28px';
+        txt.style.color = '#50ADBF'
+    }
+    
+</script>
