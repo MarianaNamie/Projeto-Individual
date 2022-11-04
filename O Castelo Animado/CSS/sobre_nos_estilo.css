@@ -20,7 +20,7 @@ html {
     background-position: bottom;
     background-color: rgba(22, 72, 118, 0.25);
     background-blend-mode: color;
-    border: solid 3px fuchsia;
+    /* border: solid 3px fuchsia; */
     display: flex;
     flex-direction: column;
 }
@@ -30,7 +30,7 @@ html {
     height: 104px;
     background-image: linear-gradient(rgba(80, 173, 191, 1), rgba(0, 0, 0, 0));
     display: flex;
-    border: solid 3px hotpink;
+    /* border: solid 3px hotpink; */
 }
 
 .container {
@@ -94,12 +94,21 @@ html {
     transition: 0.25s;
 }
 
+.texto_pai {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: solid 3px green; */
+    height: 100%;
+}
+
 .text_banner {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid 3px firebrick;
+    /* border: solid 3px firebrick; */
 }
 
 .text_banner h1 {
@@ -109,7 +118,17 @@ html {
     font-size: 110px;
     text-shadow: 0px 4px 4px black;
 }
+/* fim */
+/* início do sobre nós */
+.personagem {
+    border: solid 3px coral;
+}
 
+.texto_sophie {
+    border: solid 3px mediumvioletred;
+}
+
+/* fim do sobre nós */
 /* Início do Footer */
 .footer {
     display: flex;
