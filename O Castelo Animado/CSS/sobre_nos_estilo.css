@@ -164,36 +164,32 @@ html {
 /* fim do sobre nós */
 /* inicio da personalidade */
 
-.personalidade {
-    border: solid 3px hotpink;
-}
-
 .content {
-    border: solid 3px chartreuse;
+    /* border: solid 3px chartreuse; */
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: 600px;
-}
-
-.texto {
-    border: solid 3px chocolate;
-}
-
-.titulo {
-    border: solid 3px violet;
+    height: 750px;
 }
 
 .titulo h1{
     text-align: center;
     font-family: 'PT Serif';
     font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.titulo p {
+    text-align: center;
+    font-family: 'PT Serif';
+    font-size: 20px;
+    margin-bottom: 80px;
 }
 
 .caixas {
-    border: solid 3px brown;
+    /* border: solid 3px brown; */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .caixa{
@@ -207,7 +203,7 @@ html {
 }
 
 .caixa .img {
-    border: solid 3px firebrick;
+    /* border: solid 3px firebrick; */
     width: 240px;
     height: 240px;
     display: flex;
@@ -216,24 +212,22 @@ html {
 }
 
 .caixa img {
-    border: solid 3px firebrick;
-    width: 55%;
-    height: 55%;
+    /* border: solid 3px firebrick; */
+    width: 130px;
+    height: 130px;
 }
 
-.txt {
-    border: solid 3px navy;
-    width: 240px;
+.txt1 {
+    display: none;
+}
+
+.txt2 {
     display: none;
 }
 
 .caixa:hover {
     height: 350px;
     transition: 0.25s;
-}
-
-.txt:hover{
-    font-size: 10px;
 }
 
 /* fim da personalidade */

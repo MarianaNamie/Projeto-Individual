@@ -12,7 +12,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Grandstander&family=Merriweather:wght@400;600;700&family=PT+Serif&family=Playfair+Display:wght@400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander&family=Montserrat&family=Merriweather:wght@400;600;700&family=PT+Serif&family=Playfair+Display:wght@400;800&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -62,32 +62,27 @@
                 <div class="texto">
                     <div class="titulo">
                         <h1>Nossa Personalidade</h1>
+                        <p>Passe o mouse em cima para verificar</p>
                     </div>
                 </div>
                 <div class="caixas">
-                    <div class="caixa" id="caixa1" onmouseout="naoDizer()" onmouseover="dizerAlgo()">
-                        <div class="img">
-                            <img src="CSS/assets/valores1.png">
-                        </div>
-                        <div id="txt">
-                            <p>Gosta de ser gentil</p>
-                        </div>
-                    </div>
-                    <div class="caixa">
-                        <div class="img">
-                            <img src="CSS/assets/valores2.png">
-                        </div>
-                        <div class="txt">
-                            <p>Não gosta de ser o centro das atenções</p>
-                        </div>
-                    </div>
-                    <div class="caixa">
+                    <div class="caixa" onmouseout="naoDizer1()" onmouseover="dizerAlgo1()">
                         <div class="img">
                             <img src="CSS/assets/valores3.png">
                         </div>
-                        <div class="txt">
-                            <p>Age como uma pessoa mais velha</p>
+                        <div id="txt1"></div>
+                    </div>
+                    <div class="caixa" onmouseout="naoDizer2()" onmouseover="dizerAlgo2()">
+                        <div class="img">
+                            <img src="CSS/assets/valores1.png">
                         </div>
+                        <div id="txt2"></div>
+                    </div>
+                    <div class="caixa" onmouseout="naoDizer3()" onmouseover="dizerAlgo3()">
+                        <div class="img">
+                            <img src="CSS/assets/valores2.png">
+                        </div>
+                        <div id="txt3"></div>
                     </div>
                 </div>
             </div>
@@ -106,15 +101,45 @@
 </html>
 
 <script>
-    function naoDizer() {
-        txt.style.display = 'none';
+    // txt1.style.display = 'none';
+
+    function naoDizer1() {
+        txt1.style.display = 'none';
     }
-    function dizerAlgo() {
-        txt.innerHTML = `Gosta de ser gentil`;
-        txt.style.display = 'block';
-        txt.style.transition = '0.25s';
-        // txt.style.font-size = '28px';
-        txt.style.color = '#50ADBF'
+    function dizerAlgo1() {
+        txt1.innerHTML = `Gosta de ser gentil`;
+        txt1.style.display = 'block';
+        txt1.style.fontSize = '25px';
+        txt1.style.color = '#50ADBF';
+        txt1.style.fontFamily = 'Montserrat';
+        txt1.style.textAlign = 'center';
+        txt1.style.width = '200px';
+    }
+
+    function naoDizer2() {
+        txt2.style.display = 'none';
+    }
+    function dizerAlgo2() {
+        txt2.innerHTML = `Não gosta de ser o centro das atenções`;
+        txt2.style.display = 'block';
+        txt2.style.fontSize = '25px';
+        txt2.style.color = '#50ADBF';
+        txt2.style.fontFamily = 'Montserrat';
+        txt2.style.textAlign = 'center';
+        txt2.style.width = '200px';
     }
     
+    function naoDizer3() {
+        txt3.style.display = 'none';
+    }
+    function dizerAlgo3() {
+        txt3.innerHTML = `Age como uma pessoa mais velha`;
+        txt3.style.display = 'block';
+        txt3.style.fontSize = '25px';
+        txt3.style.color = '#50ADBF';
+        txt3.style.fontFamily = 'Montserrat';
+        txt3.style.textAlign = 'center';
+        txt3.style.width = '200px';
+    }
+
 </script>
