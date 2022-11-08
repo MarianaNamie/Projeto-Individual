@@ -14,7 +14,7 @@ html {
   }
 
 .banner {
-    height: 700px;
+    height: 550px;
     background: url(assets/home1.jpg) no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -39,16 +39,16 @@ html {
 
 .links {
     width: 50%;
-    font-family: 'PT Serif';
+    font-family: 'Josefin Sans';
     justify-content: end;
 }
 
 .container img {
-    height: 50px;
+    height: 45px;
 }
 
 .navbar {
-    font-size: 20px;
+    font-size: 16px;
     display: flex;
     list-style: none;
     align-items: center;
@@ -75,13 +75,16 @@ html {
     border: solid 2px #FFFFFF;
     border-radius: 0;
     background-color: transparent;
-    font-size: 20px;
-    height: 46px;
-    width: 155px;
+    font-size: 16px;
+    height: 42px;
+    width: 145px;
     color: white;
-    font-family: 'PT Serif';
+    font-family: 'Josefin Sans';
     cursor: pointer;
     transition: 0.25s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .links button:hover{
@@ -101,7 +104,7 @@ html {
 
 .text_banner h1 {
     font-family: 'Grandstander';
-    font-size: 110px;
+    font-size: 85px;
     text-shadow: 0px 4px 4px black;
     margin-bottom: 50px;
 }
@@ -109,24 +112,24 @@ html {
 .text_banner p {
     font-family: 'Merriweather';
     font-weight: 700;
-    font-size: 25px;
+    font-size: 20px;
     text-shadow: 0px 4px 4px black;
     margin: 0%;
     margin-top: 5px;
 }
 
 .text_banner .button{
-    margin-top: 60px;
+    margin-top: 45px;
     border-radius: 100px;
     background-color: transparent;
     font-family: 'Merriweather';
-    font-size: 24px;
+    font-size: 15px;
     color: #EAC557;
     border: solid 3px #EAC557;
     cursor: pointer;
     transition: 0.25s;
-    width: 195px;
-    height: 71px;
+    width: 150px;
+    height: 50px;
     display: flex;
     justify-content: center;
 }
@@ -162,30 +165,30 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 35px;
-    padding-bottom: 35px;
-    padding-right: 25px;
-    padding-left: 25px;
-    transition: transform .2s;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    transition: transform 0.2s;
     transition: 0.25s;
 }
 
 .caixa img{
-    height: 120px;
+    height: 100px;
     align-items: center;
 }
 
 .caixa .titulo{
     font-family: 'Playfair Display';
     font-weight: 800;
-    font-size: 27px;
+    font-size: 20px;
     text-align: center;
 }
 
 .caixa .desc{
     font-family: 'Playfair Display';
     font-weight: 400;
-    font-size: 23px;
+    font-size: 20px;
     width: 303px;
     text-align: center;
     margin-bottom: 0%;
@@ -239,35 +242,36 @@ html {
     margin-right: 20%;
 }
 
-.texto h1{
+.fundo_verde h1{
     font-family: 'Merriweather';
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 700;
 }
 
-.texto p{
+.fundo_verde p{
     font-family: 'Playfair Display';
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 400;
     text-align: justify;
     text-justify: inter-word;
 }
 /* Fim da Sinopse */
 /* Início da Repercussão Mundial */
-.texto{
-    margin-top: 125px;
-    margin-bottom: 125px;
+.container .texto{
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
-.texto h1 {
+.container .texto h1 {
     font-family: 'Merriweather';
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 700;
+    margin-bottom: 45px;
 }
 
-.texto p {
+.container .texto p {
     font-family: 'Playfair Display';
-    font-size: 26px;
+    font-size: 22px;
     text-align: justify;
     text-justify: inter-word;
 }
