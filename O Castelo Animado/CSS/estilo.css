@@ -272,8 +272,8 @@ html {
 .container .texto p {
     font-family: 'Playfair Display';
     font-size: 22px;
+    font-weight: 400;
     text-align: justify;
-    text-justify: inter-word;
 }
 /* Fim da Repercussão Mundial */
 /* Início do Footer */
@@ -292,7 +292,7 @@ html {
 }
 
 .info img {
-    height: 50px;
+    height: 45px;
 }
 
 .info p {

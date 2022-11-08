@@ -14,13 +14,12 @@ html {
 }
 
 .banner {
-    height: 600px;
+    height: 400px;
     background: url(assets/sobre_nos.webp) no-repeat;
     background-size: cover;
     background-position: bottom;
     background-color: rgba(22, 72, 118, 0.25);
     background-blend-mode: color;
-    /* border: solid 3px fuchsia; */
     display: flex;
     flex-direction: column;
 }
@@ -30,7 +29,6 @@ html {
     height: 104px;
     background-image: linear-gradient(rgba(80, 173, 191, 1), rgba(0, 0, 0, 0));
     display: flex;
-    /* border: solid 3px hotpink; */
 }
 
 .container {
@@ -43,16 +41,16 @@ html {
 
 .links {
     width: 50%;
-    font-family: 'PT Serif';
+    font-family: 'Josefin Sans';
     justify-content: end;
 }
 
 .container img {
-    height: 50px;
+    height: 45px;
 }
 
 .navbar {
-    font-size: 20px;
+    font-size: 16px;
     display: flex;
     list-style: none;
     align-items: center;
@@ -79,13 +77,16 @@ html {
     border: solid 2px #FFFFFF;
     border-radius: 0;
     background-color: transparent;
-    font-size: 20px;
-    height: 46px;
-    width: 155px;
+    font-size: 16px;
+    height: 42px;
+    width: 145px;
     color: white;
-    font-family: 'PT Serif';
+    font-family: 'Josefin Sans';
     cursor: pointer;
     transition: 0.25s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .links button:hover {
@@ -115,7 +116,7 @@ html {
     color: #E7E7DD;
     text-align: center;
     font-family: 'Grandstander';
-    font-size: 110px;
+    font-size: 85px;
     text-shadow: 0px 4px 4px black;
 }
 /* fim */
@@ -134,18 +135,22 @@ html {
     /* border: solid 3px mediumvioletred; */
     height: 500px;
     width: 450px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .texto_sophie h1{
     text-align: center;
     font-family: 'PT Serif';
-    font-size: 40px;
+    font-size: 35px;
     margin-bottom: 45px;
 }
 
 .texto_sophie p {
     font-family: 'PT Serif';
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 10px;
 }
 
@@ -176,12 +181,12 @@ html {
     text-align: center;
     font-family: 'PT Serif';
     font-size: 45px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .titulo p {
     text-align: center;
-    font-family: 'PT Serif';
+    font-family: 'Josefin Sans';
     font-size: 20px;
     margin-bottom: 80px;
 }
@@ -190,6 +195,7 @@ html {
     /* border: solid 3px brown; */
     display: flex;
     justify-content: space-around;
+    padding-top: 20px;
 }
 
 .caixa{
@@ -199,11 +205,11 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: 0.25s;
+    transition: 0.3s;
 }
 
 .caixa .img {
-    /* border: solid 3px firebrick; */
+    /* border: solid 3px rgb(108, 34, 178); */
     width: 240px;
     height: 240px;
     display: flex;
@@ -212,7 +218,7 @@ html {
 }
 
 .caixa img {
-    /* border: solid 3px firebrick; */
+    /* border: solid 3px rgb(34, 178, 70); */
     width: 130px;
     height: 130px;
 }
@@ -227,7 +233,7 @@ html {
 
 .caixa:hover {
     height: 350px;
-    transition: 0.25s;
+    transition: 0.3s;
 }
 
 /* fim da personalidade */
@@ -247,7 +253,7 @@ html {
 }
 
 .info img {
-    height: 50px;
+    height: 45px;
 }
 
 .info p {
