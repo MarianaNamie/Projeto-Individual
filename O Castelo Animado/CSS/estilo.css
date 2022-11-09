@@ -71,7 +71,7 @@ html {
     transition: 0.25s;
 }
 
-.navbar button{
+.navbar .botao{
     border: solid 2px #FFFFFF;
     border-radius: 0;
     background-color: transparent;
@@ -87,11 +87,12 @@ html {
     align-items: center;
 }
 
-.links button:hover{
+.links .botao:hover{
     color: #061F36;
     border: solid 2px #061F36;
     transition: 0.25s;
 }
+
 
 .text_banner {
     color: #E7E7DD;
