@@ -65,34 +65,51 @@
 
 .formularioCadastro h1 {
     font-family: 'Playfair Display';
-    font-size: 30px;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .formularioCadastro input {
     font-family: 'Playfair Display';
-    font-size: 20px;
-    width: 370px;
-    margin-top: 20px;
+    font-size: 18px;
+    width: 280px;
+    margin-top: 15px;
     color: #767676;
     border: none;
     border-bottom:solid 2px #767676;
-    padding: 5px;
+    padding: 2px;
 }
 
 .inputCadastro {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudoCadastro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .botaoCadastrar {
     background-color: #EAC557;
     font-family: 'PT Serif';
-    font-size: 24px;
+    font-size: 20px;
     color: white;
     border: none;
-    width: 370px;
-    height: 54px;
+    width: 285px;
+    height: 50px;
     border-radius: 10px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
