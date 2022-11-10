@@ -20,6 +20,8 @@ html {
     background-position: bottom;
     background-color: rgba(22, 72, 118, 0.25);
     background-blend-mode: color;
+    display: flex;
+    flex-direction: column;
 }
 
 .degradê {
@@ -285,22 +287,20 @@ html {
 
 .caixa_verde {
     background-color: #50ADBF;
-    height: 164px;
+    height: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.info img {
-    height: 45px;
-}
-
 .info p {
     font-family: 'PT Serif';
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
     color: white;
     margin-bottom: 0%;
+    display: flex;
+    justify-content: center;
 }
 /* Fim do Footer */

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-brpt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Castelo Animado</title>
+
+    <link rel="icon" href="CSS/assets/favicon.png">
+
+    <link rel="stylesheet" href="CSS/interacao_estilo.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Grandstander&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Merriweather:wght@400;600;700&family=PT+Serif&family=Playfair+Display:wght@400;500;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- BANNER -->
+    <header>
+        <div class="banner">
+            <nav class="degradê">
+                <div class="container">
+                    <a href="index.html"><img src="CSS/assets/logo.webp"></a>
+                    <div class="links">
+                        <ul class="navbar">
+                            <li><a href="index.html" class="">Home</a></li>
+                            <li><a href="sobre_nos.html" class="">Sobre Nós</a></li>
+                            <li><a href="interacao.html" class="agora">Votação</a></li>
+                            <button class="botao">Sair</button>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="texto_pai">
+                <div class="text_banner">
+                    <h1>Votação</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="votacao">
+        <div class="container">
+            <h1>Selecione o seu filme preferido e confirme</h1>
+            <div class="fileira1">
+                <div class="poster_tudo">
+                    <div class="poster" id="A_Viagem_de_Chihiro"></div>
+                    <div class="texto">
+                        <h1>A Viagem de Chihiro<br>(2001)</h1>
+                    </div>
+                </div>
+                <div class="poster_tudo">
+                    <div class="poster" id="Meu_Amigo_Totoro"></div>
+                    <div class="texto">
+                        <h1>Meu Amigo Totoro<br>(1988)</h1>
+                    </div>
+                </div>
+                <div class="poster_tudo">
+                    <div class="poster" id="O_Castelo_Animado"></div>
+                    <div class="texto">
+                        <h1>O Castelo Animado<br>(2004)</h1>
+                    </div>
+                </div>
+                <div class="poster_tudo">
+                    <div class="poster" id="Princesa_Mononoke"></div>
+                    <div class="texto">
+                        <h1>Princesa Mononoke<br>(1997)</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="fileira2">
+                <div class="poster_tudo">
+                    <div class="poster" id="O_Serviço_de_Entregas_da_Kiki"></div>
+                    <div class="texto">
+                        <h1>O Serviço de Entregas da Kiki<br>(1989)</h1>
+                    </div>
+                </div>
+                <div class="poster_tudo">
+                    <div class="poster" id="Ponyo"></div>
+                    <div class="texto">
+                        <h1>Ponyo<br>(2008)</h1>
+                    </div>
+                </div>
+                <div class="poster_tudo">
+                    <div class="poster" id="O_Último_Herói_Romântico"></div>
+                    <div class="texto">
+                        <h1>Porco Rosso: O Último Herói Romântico<br>(1992)</h1>
+                    </div>
+                </div>
+                <div class="poster_tudo">
+                    <div class="poster" id="O_Reino_dos_Gatos"></div>
+                    <div class="texto">
+                        <h1>O Reino dos Gatos<br>(2002)</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="fileira3">
+                <div class="poster_tudo">
+                    <div class="poster" id="Vidas_ao_Vento"></div>
+                    <div class="texto">
+                        <h1>Vidas ao Vento<br>(2013)</h1>
+                    </div>
+                </div>
+                <div class="poster_tudo">
+                    <div class="poster" id="O_Mundo_dos_Pequeninos"></div>
+                    <div class="texto">
+                        <h1>O Mundo dos Pequeninos<br>(2010)</h1>
+                    </div>
+                </div>
+                <div class="poster_tudo">
+                    <div class="poster" id="As_Memórias_de_Marnie"></div>
+                    <div class="texto">
+                        <h1>As Memórias de Marnie<br>(2014)</h1>
+                    </div>
+                </div>
+                <div class="poster_tudo">
+                    <div class="poster" id="Contos_de_Terramar"></div>
+                    <div class="texto">
+                        <h1>Contos de Terramar<br>(2006)</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="botao_executar">
+                <button class="confirmar">Confirmar</button>
+                <button class="desfazer">Refazer Voto</button>
+            </div>
+        </div>
+    </div>
+    <div class="resultado_voto">
+        <h1>Filme Mais Votado</h1>
+        <div>
+            <canvas id="grafico"></canvas>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+        <div class="caixa_verde">
+            <div class="info">
+                <p>Developed by Mariana Namie</p>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+</body>
+
+</html>
+<script>
+    const labels = [
+      'A Viagem de Chihiro',
+      'Meu Amigo Totoro',
+      'O Castelo Animado',
+      'Princesa Mononoke',
+      'O Serviço de Entregas da Kiki',
+      'Ponyo',
+      'Porco Rosso: O Último Herói Romântico',
+      'O Reino dos Gatos',
+      'Vidas ao Vento',
+      'O Mundo dos Pequeninos',
+      'As Memórias de Marnie',
+      'Contos de Terramar',
+    ];
+  
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'Quantidade de Votos',
+        backgroundColor: 'rgb(67, 141, 76)',
+        borderColor: 'rgb(67, 141, 76)',
+        data: [2, 10, 5, 2, 20, 30, 45, 2, 7, 22, 45, 18],
+      }]
+    };
+  
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {
+        indexAxis: 'y',
+      }
+    };
+  </script>
+  <script>
+    const grafico = new Chart(
+      document.getElementById('grafico'),
+      config
+    );
+  </script>

@@ -9,6 +9,7 @@
     <link rel="icon" href="CSS/assets/favicon.png">
 
     <link rel="stylesheet" href="CSS/sobre_nos_estilo.css">
+    <link rel="stylesheet" href="CSS/popup_estilo.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,8 +27,60 @@
                         <ul class="navbar">
                             <li><a href="index.html" class="">Home</a></li>
                             <li><a href="sobre_nos.html" class="agora">Sobre Nós</a></li>
-                            <li><a href="" class="">Votação</a></li>
-                            <a href=""><button>Login/Cadastro</button></a>
+                            <li><a href="interacao.html" class="">Votação</a></li>
+                            <!-- botao para popup -->
+
+                            <button id="popup_botao" class="botao">Login/Cadastro</button>
+
+                            <div id="popup_fundo" class="popup">
+                                <div class="popup_conteudo">
+                                    <div class="telaCadastro">
+                                        <div class="formularioCadastro">
+                                            <div class="conteudoCadastro">                
+                                                <h1>Cadastre sua Conta</h1>
+                                                <div class="inputCadastro">
+                                                    <input type="text" id="" placeholder="Nome">
+                                                    <input type="text" id="" placeholder="Sobrenome">
+                                                    <input type="text" id="" placeholder="E-mail">
+                                                    <input type="password" id="" placeholder="Senha">
+                                                    <input type="password" id="" placeholder="Confirmação de Senha">
+                                                </div>
+                                                <button class="botaoCadastrar">Cadastrar</button>
+                                                <p>Já tem uma conta? <b><a onclick="abrirLogin()"><u>Clique aqui</u></a></b> para Entrar</p>
+                                            </div>
+                                        </div>
+                                        <div class="imgCadastro">
+                                            <span class="popup_fechar">&times;</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- fim do botao -->
+                            <!-- inicio do login -->
+
+                            <div id="popup_fundo_login" class="popupLogin">
+                                <div class="popup_conteudo_login">
+                                    <div class="telaLogin">
+                                        <div class="formularioLogin">
+                                            <div class="conteudoLogin">                
+                                                <h1>Olá Novamente!</h1>
+                                                <div class="inputLogin">
+                                                    <input type="text" placeholder="E-mail">
+                                                    <input type="password" placeholder="Senha">
+                                                </div>
+                                                <button class="botaoEntrar">Entrar</button>
+                                                <p>Não tem uma conta? <b><a onclick="abrirCadastro()"><u>Clique aqui</u></a></b> para Cadastrar</p>
+                                            </div>
+                                        </div>
+                                        <div class="imgLogin">
+                                            <span class="popup_fechar_login">&times;</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- fim do login -->
                         </ul>
                     </div>  
                 </div>
@@ -92,7 +145,6 @@
 <div class="footer">
     <div class="caixa_verde">
         <div class="info">
-            <a href="index.html"><img src="CSS/assets/logo.webp"></a>
             <p>Developed by Mariana Namie</p>
         </div>
     </div>
@@ -142,4 +194,64 @@
         txt3.style.width = '200px';
     }
 
+    // popup
+    var popup = document.getElementById('popup_fundo');
+    // abrir o popup
+    var botao = document.getElementById('popup_botao');
+    // botao fechar
+    var popup_fechar = document.getElementsByClassName('popup_fechar')[0];
+
+    // abrir com clique
+    botao.addEventListener('click', abrirPopup);
+    
+    // fechar com clique no botao
+    popup_fechar.addEventListener('click', fecharPopup);
+    
+    // fechar com clique fora do popup
+    window.addEventListener('click', fecharFora);
+
+    // função para abrir com o clique
+    function abrirPopup() {
+        popup.style.display = 'block';
+    }
+
+    // função para fechar popup com o clique no botão
+    function fecharPopup() {
+        popup.style.display = 'none';
+    }
+
+    // função para fechar popup se clicar fora
+    function fecharFora(e) {
+        if (e.target == popup) {
+            popup.style.display = 'none';
+        }
+    }
+
+    var popupLogin = document.getElementById('popup_fundo_login');
+
+    var popup_fechar_login = document.getElementsByClassName('popup_fechar_login')[0];
+
+    popup_fechar_login.addEventListener('click', fecharPopupLogin);
+
+    window.addEventListener('click', fecharForaLogin);
+
+    function abrirLogin() {
+        popup.style.display = 'none';
+        popupLogin.style.display = 'block';
+    }
+
+    function fecharPopupLogin() {
+        popupLogin.style.display = 'none';
+    }
+
+    function fecharForaLogin(e) {
+        if (e.target == popupLogin) {
+            popupLogin.style.display = 'none';
+        }
+    }
+
+    function abrirCadastro() {
+        popupLogin.style.display = 'none';
+        popup.style.display = 'block';
+    }
 </script>

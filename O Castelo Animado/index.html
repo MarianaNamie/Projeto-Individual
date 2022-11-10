@@ -27,7 +27,7 @@
                         <ul class="navbar">
                             <li><a href="index.html" class="agora">Home</a></li>
                             <li class=""><a href="sobre_nos.html">Sobre Nós</a></li>
-                            <li class=""><a href="">Votação</a></li>
+                            <li class=""><a href="interacao.html">Votação</a></li>
 
                             <!-- botao para popup -->
 
@@ -47,7 +47,7 @@
                                                     <input type="password" id="" placeholder="Confirmação de Senha">
                                                 </div>
                                                 <button class="botaoCadastrar">Cadastrar</button>
-                                                <p>Já tem uma conta? <b><u>Clique aqui</u></b> para Entrar</p>
+                                                <p>Já tem uma conta? <b><a onclick="abrirLogin()"><u>Clique aqui</u></a></b> para Entrar</p>
                                             </div>
                                         </div>
                                         <div class="imgCadastro">
@@ -58,7 +58,30 @@
                             </div>
                             
                             <!-- fim do botao -->
+                            <!-- inicio do login -->
 
+                            <div id="popup_fundo_login" class="popupLogin">
+                                <div class="popup_conteudo_login">
+                                    <div class="telaLogin">
+                                        <div class="formularioLogin">
+                                            <div class="conteudoLogin">                
+                                                <h1>Olá Novamente!</h1>
+                                                <div class="inputLogin">
+                                                    <input type="text" placeholder="E-mail">
+                                                    <input type="password" placeholder="Senha">
+                                                </div>
+                                                <button class="botaoEntrar">Entrar</button>
+                                                <p>Não tem uma conta? <b><a onclick="abrirCadastro()"><u>Clique aqui</u></a></b> para Cadastrar</p>
+                                            </div>
+                                        </div>
+                                        <div class="imgLogin">
+                                            <span class="popup_fechar_login">&times;</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- fim do login -->
                         </ul>
                     </div>  
                 </div>
@@ -121,7 +144,6 @@
     <div class="footer">
         <div class="caixa_verde">
             <div class="info">
-                <a href="index.html"><img src="CSS/assets/logo.webp"></a>
                 <p>Developed by Mariana Namie</p>
             </div>
         </div>
@@ -161,5 +183,33 @@
         if (e.target == popup) {
             popup.style.display = 'none';
         }
+    }
+
+    var popupLogin = document.getElementById('popup_fundo_login');
+
+    var popup_fechar_login = document.getElementsByClassName('popup_fechar_login')[0];
+
+    popup_fechar_login.addEventListener('click', fecharPopupLogin);
+
+    window.addEventListener('click', fecharForaLogin);
+
+    function abrirLogin() {
+        popup.style.display = 'none';
+        popupLogin.style.display = 'block';
+    }
+
+    function fecharPopupLogin() {
+        popupLogin.style.display = 'none';
+    }
+
+    function fecharForaLogin(e) {
+        if (e.target == popupLogin) {
+            popupLogin.style.display = 'none';
+        }
+    }
+
+    function abrirCadastro() {
+        popupLogin.style.display = 'none';
+        popup.style.display = 'block';
     }
 </script>
