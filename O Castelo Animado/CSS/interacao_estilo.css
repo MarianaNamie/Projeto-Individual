@@ -42,6 +42,8 @@ html {
     width: 50%;
     font-family: 'Josefin Sans';
     justify-content: end;
+    display: flex;
+    height: 104px;
 }
 
 .container img {
@@ -55,6 +57,7 @@ html {
     align-items: center;
     justify-content: end;
     justify-content: space-between;
+    width: 40%;
 }
 
 .navbar .agora {
@@ -78,7 +81,7 @@ html {
     background-color: transparent;
     font-size: 16px;
     height: 42px;
-    width: 145px;
+    width: 80px;
     color: white;
     font-family: 'Josefin Sans';
     cursor: pointer;
@@ -362,6 +365,12 @@ html {
     margin-bottom: 30px;
     font-family: 'Josefin Sans';
     font-size: 20px;
+    border: solid 1px #061F36;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: none;
+    border-radius: 5px;
 }
 
 /* fim de indicacao */

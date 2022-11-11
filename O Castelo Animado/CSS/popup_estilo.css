@@ -72,7 +72,7 @@
 
 .formularioCadastro input {
     font-family: 'Playfair Display';
-    font-size: 18px;
+    font-size: 15px;
     width: 330px;
     margin-top: 15px;
     color: #767676;
@@ -208,7 +208,7 @@
 
 .formularioLogin input {
     font-family: 'Playfair Display';
-    font-size: 18px;
+    font-size: 15px;
     width: 330px;
     margin-top: 15px;
     color: #767676;

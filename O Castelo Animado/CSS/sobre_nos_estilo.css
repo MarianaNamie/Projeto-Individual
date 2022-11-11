@@ -40,9 +40,10 @@ html {
 }
 
 .links {
-    width: 50%;
+    width: 40%;
     font-family: 'Josefin Sans';
     justify-content: end;
+    height: 104px;
 }
 
 .container img {

@@ -30,8 +30,6 @@
                     <a href="index.html"><img src="CSS/assets/logo.webp"></a>
                     <div class="links">
                         <ul class="navbar">
-                            <li><a href="index.html" class="">Home</a></li>
-                            <li><a href="sobre_nos.html" class="">Sobre Nós</a></li>
                             <li><a href="interacao.html" class="agora">Votação</a></li>
                             <button class="botao">Sair</button>
                         </ul>
@@ -204,8 +202,10 @@
     var filmes = ['O Castelo Animado', 'A Viagem de Chihiro', 'O Reino dos Gatos', 'Ponyo', 'Contos de Terramar'];
     function indicar() {
         resultado_indicacao.innerHTML = "";
+        resultado_indicacao.style.display = 'none';
         for (let index = 0; index < filmes.length; index++) {
-            resultado_indicacao.innerHTML += `${index+1} - ${filmes[index]}<br>`;
+            resultado_indicacao.style.display = 'block';
+            resultado_indicacao.innerHTML += `${index+1} - ${filmes[index]}<br><br>`;
         }
     }
 </script>
