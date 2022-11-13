@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Castelo Animado</title>
 
+    <script src="./js/funcoes.js"></script>
+
     <link rel="icon" href="CSS/assets/favicon.png">
 
     <link rel="stylesheet" href="CSS/estilo.css">
@@ -39,13 +41,13 @@
                                             <div class="conteudoCadastro">                
                                                 <h1>Cadastre sua Conta</h1>
                                                 <div class="inputCadastro">
-                                                    <input type="text" id="" placeholder="Nome">
-                                                    <input type="text" id="" placeholder="Sobrenome">
-                                                    <input type="text" id="" placeholder="E-mail">
-                                                    <input type="password" id="" placeholder="Senha">
-                                                    <input type="password" id="" placeholder="Confirmação de Senha">
+                                                    <input type="text" id="inp_nome" placeholder="Nome">
+                                                    <input type="text" id="inp_sobrenome" placeholder="Sobrenome">
+                                                    <input type="text" id="inp_email" placeholder="E-mail">
+                                                    <input type="password" id="inp_senha" placeholder="Senha">
+                                                    <input type="password" id="inp_confirmacao" placeholder="Confirmação de Senha">
                                                 </div>
-                                                <button class="botaoCadastrar">Cadastrar</button>
+                                                <button class="botaoCadastrar" onclick="cadastrar()">Cadastrar</button>
                                                 <p>Já tem uma conta? <b><a onclick="abrirLogin()"><u>Clique aqui</u></a></b> para Entrar</p>
                                             </div>
                                         </div>
@@ -66,10 +68,10 @@
                                             <div class="conteudoLogin">                
                                                 <h1>Olá Novamente!</h1>
                                                 <div class="inputLogin">
-                                                    <input type="text" placeholder="E-mail">
-                                                    <input type="password" placeholder="Senha">
+                                                    <input type="text" placeholder="E-mail" id="inp_email1">
+                                                    <input type="password" placeholder="Senha" id="inp_senha1">
                                                 </div>
-                                                <button class="botaoEntrar">Entrar</button>
+                                                <button class="botaoEntrar" onclick="entrar()">Entrar</button>
                                                 <p>Não tem uma conta? <b><a onclick="abrirCadastro()"><u>Clique aqui</u></a></b> para Cadastrar</p>
                                             </div>
                                         </div>
@@ -150,6 +152,7 @@
 </body>
 </html>
 
+<!-- modal -->
 <script>
     // popup
     var popup = document.getElementById('popup_fundo');
@@ -210,5 +213,112 @@
     function abrirCadastro() {
         popupLogin.style.display = 'none';
         popup.style.display = 'block';
+    }
+</script>
+<!-- cadastro -->
+<script>
+    function cadastrar() {
+
+        var nomeVar = inp_nome.value;
+        var sobrenomeVar = inp_sobrenome.value;
+        var emailVar = inp_email.value;
+        var senhaVar = inp_senha.value;
+        var confirmacaoVar = inp_confirmacao.value;
+
+        if (nomeVar == "" || sobrenomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoVar == "") {
+            alert(`Preencha todos os campos`)
+            return false;
+        }
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                sobrenomeServer: sobrenomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                setTimeout(() => {
+                    abrirLogin();
+                }, "2000")
+                
+                limparFormulario();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+        });
+
+        return false;
+    }
+</script>
+<!-- login -->
+<script>
+    function entrar() {
+
+        var emailVar = inp_email1.value;
+        var senhaVar = inp_senha1.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            alert(`Preencha todos os campos`)
+            return false;
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+
+                    setTimeout(function () {
+                        console.log("cheguei ate aqui")
+                        window.location = "interacao.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
     }
 </script>
