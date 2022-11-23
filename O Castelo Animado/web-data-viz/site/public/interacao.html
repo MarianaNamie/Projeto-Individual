@@ -21,7 +21,7 @@
 
 </head>
 
-<body>
+<body onload="select_voto()">
     <!-- BANNER -->
     <header>
         <div class="banner">
@@ -283,10 +283,6 @@
 
                 acrescentar_voto();
 
-                // setTimeout(() => {
-                //     window.location = "login.html";
-                // }, "2000")
-
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -306,7 +302,7 @@
         
     }
     
-    function refazer_voto() {
+    function sem_voto() {
         confirmar_voto.style.display = "block";
         refazer_o_voto.style.display = "none";
         fileiras1.style.display = "flex";
@@ -314,4 +310,64 @@
         fileiras3.style.display = "flex";
     }
 
+    function com_voto() {
+        confirmar_voto.style.display = "none";
+        refazer_o_voto.style.display = "block";
+        texto_voto.style.display = "none";
+        fileiras1.style.display = "none";
+        fileiras2.style.display = "none";
+        fileiras3.style.display = "none";
+    }
+
+    function refazer_voto() {
+        confirmar_voto.style.display = "block";
+        refazer_o_voto.style.display = "none";
+        fileiras1.style.display = "flex";
+        fileiras2.style.display = "flex";
+        fileiras3.style.display = "flex";
+        deletar();
+    }
+    
+</script>
+<script>
+    function select_voto() {
+        var idUsuario = sessionStorage.ID_USUARIO;
+
+        fetch(`/avisos/atualizar_voto/${idUsuario}`).then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then(function (resposta) {
+
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    if (resposta == []) {
+                        sem_voto()
+                    } else {
+                        com_voto()
+                    }
+
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+    }
+    
+    function deletar() {
+        fetch(`/avisos/deletar/${idUsuario}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (resposta) {
+            
+            if (resposta.ok) {
+                sem_voto();
+                acrescentar_voto();
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
 </script>

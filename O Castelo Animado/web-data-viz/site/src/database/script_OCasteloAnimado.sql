@@ -52,13 +52,8 @@ insert into filme values
     
 select * from usuario;
 desc votacao;
-    
-insert into votacao values 
-	(null, now(), 1, 3),
-	(null, now(), 2, 1);
-    
-insert into usuario values
-	(null, 'Johnatan', 'Cardozo', 'johnny@johnny', 123);
+
+insert into votacao (data_hora, fkusuario, fkfilme) VALUES (now(), 2, 1);
     
 select filme.nome from filme
 	join votacao on filme.idFilme = votacao.fkFilme
@@ -72,3 +67,23 @@ select * from votacao;
 select count(fkFilme), filme.nome from votacao
 	join filme on Filme.idFilme = votacao.fkFilme
 		group by Filme.nome;
+        
+insert into usuario values 
+	(null, 'Johnatan', 'Cardozo', 'johnny@gmail.com', 123),
+	(null, 'Lucas', 'Jorge', 'lucas@gmail.com', 123),
+	(null, 'Victor', 'Daniel', 'victor@gmail.com', 123),
+	(null, 'Paula', 'Maria', 'paula@gmail.com', 123),
+	(null, 'Erica', 'Tavares', 'erica@gmail.com', 123),
+	(null, 'Mauricio', 'Ribeiro', 'mauricio@gmail.com', 123),
+	(null, 'Alisson', 'Moreira', 'alisson@gmail.com', 123),
+	(null, 'Gianlucca', 'Gutierrez', 'gian@gmail.com', 123),
+	(null, 'Gabriel', 'Ferreira', 'gabs@gmail.com', 123),
+	(null, 'Noemi', 'Bezerra', 'noemi@gmail.com', 123),
+	(null, 'Sara', 'Souza', 'sara@gmail.com', 123),
+	(null, 'Marcela', 'Macedo', 'marcela@gmail.com', 123),
+	(null, 'Vinicius', 'Venâncio', 'vinicius@gmail.com', 123),
+	(null, 'Mateus', 'Joaquim', 'mateus@gmail.com', 123);
+        
+Select * from votacao where fkUsuario = 1;
+
+delete from votacao where fkUsuario = 1;
