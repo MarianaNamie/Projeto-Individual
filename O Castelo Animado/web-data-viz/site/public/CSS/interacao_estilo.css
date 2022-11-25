@@ -181,10 +181,6 @@ html {
     height: 300px;
 }
 
-.poster_tudo .texto {
-
-}
-
 .poster_tudo .texto h1 {
     font-family: 'PT Serif';
     font-size: 15px;
@@ -278,7 +274,7 @@ html {
     background-size: cover;
 }
 
-.botao_executar{
+#botão_conf button{
     /* border: solid 3px goldenrod; */
     margin-top: 30px;
     margin-bottom: 50px;
@@ -287,11 +283,34 @@ html {
     justify-content: center;
 }
 
-.botao_executar .desfazer {
+#botão_ref button{
+    /* border: solid 3px goldenrod; */
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#botão_conf button {
     display: none;
 }
 
-.botao_executar button {
+#botão_ref button {
+    display: none;
+}
+
+.desfazer a {
+    text-decoration: none;
+    color: white;
+}
+
+.confirmar a {
+    text-decoration: none;
+    color: white;
+}
+
+#botão_conf button {
     background-color: #EAC557;
     font-family: 'PT Serif';
     font-size: 20px;
@@ -305,7 +324,28 @@ html {
     justify-content: center;
 }
 
-.botao_executar button:hover{
+#botão_conf button:hover{
+    background-color: #c5a649;
+    transition: 0.25s;
+    box-shadow: 0px 1px 5px black;
+    cursor: pointer;
+}
+
+#botão_ref button {
+    background-color: #EAC557;
+    font-family: 'PT Serif';
+    font-size: 20px;
+    color: white;
+    border: none;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#botão_ref button:hover{
     background-color: #c5a649;
     transition: 0.25s;
     box-shadow: 0px 1px 5px black;

@@ -1,3 +1,5 @@
+drop database if exists ocasteloanimado;
+
 create database if not exists OCasteloAnimado;
 
 use OCasteloAnimado;
@@ -50,11 +52,6 @@ insert into filme values
 	(null, 'As Memórias de Marnie', 2014),
 	(null, 'Contos de Terramar', 2006);
     
-select * from usuario;
-desc votacao;
-
-insert into votacao (data_hora, fkusuario, fkfilme) VALUES (now(), 2, 1);
-    
 select filme.nome from filme
 	join votacao on filme.idFilme = votacao.fkFilme
     join usuario on usuario.idUsuario = votacao.fkUsuario;
@@ -85,5 +82,3 @@ insert into usuario values
 	(null, 'Mateus', 'Joaquim', 'mateus@gmail.com', 123);
         
 Select * from votacao where fkUsuario = 1;
-
-delete from votacao where fkUsuario = 1;

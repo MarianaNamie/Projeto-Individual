@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-brpt-br">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -21,7 +21,7 @@
 
 </head>
 
-<body onload="select_voto()">
+<body onload="select_voto(), acrescentar_voto()">
     <!-- BANNER -->
     <header>
         <div class="banner">
@@ -31,7 +31,7 @@
                     <div class="links">
                         <ul class="navbar">
                             <li><a href="interacao.html" class="agora">Votação</a></li>
-                            <a href="index.html"><button class="botao">Sair</button></a>
+                            <a href="index.html"><button class="botao" onclick="deslogar()">Sair</button></a>
                         </ul>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
         </div>
     </header>
 
-    <div class="votacao" id="banner_votacao">
+    <div class="votacao" id="banner_votacao, sessao2">
         <div class="container">
             <h1 id="texto_voto">Selecione o seu filme preferido e confirme</h1>
             <div class="fileira1" id="fileiras1">
@@ -125,14 +125,16 @@
                     </div>
                 </div>
             </div>
-            <div class="botao_executar">
-                <button class="confirmar" id="confirmar_voto" onclick="votar()">Confirmar</button>
-                <button class="desfazer" id="refazer_o_voto" onclick="refazer_voto()">Refazer Voto</button>
+            <div class="botao_executar, 1" id="botão_conf" style="display: none;">
+                <button class="confirmar" id="confirmar_voto" onclick="votar()"><a href="#sessao1">Confirmar</a></button>
+            </div>
+            <div class="botao_executar, 2" id="botão_ref">
+                <button class="desfazer" id="refazer_o_voto" onclick="refazer_voto()"><a href="#sessao2">Refazer Voto</a></button>
             </div>
         </div>
     </div>
     <!-- resultado de voto -->
-    <div class="resultado_voto">
+    <div class="resultado_voto" id="sessao1">
         <h1>Filme Mais Votado</h1>
         <div>
             <canvas id="grafico"></canvas>
@@ -159,16 +161,72 @@
 
 </html>
 
+<!-- Atualizar no gráfico o voto -->
 <script>
     function acrescentar_voto() {
         fetch("/avisos/acrescentar_voto").then(function (resposta) {
             if (resposta.ok) {
                 resposta.json().then(function (resposta) {
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
-
+                    
+                    var filmes_contagem = [{
+                        nome: 'A Viagem de Chihiro',
+                        contagem: 0
+                    },
+                    {
+                        nome: 'Meu Amigo Totoro',
+                        contagem: 0
+                    },
+                    {
+                        nome: 'O Castelo Animado',
+                        contagem: 0
+                    },
+                    {
+                        nome: 'Princesa Mononoke',
+                        contagem: 0
+                    },
+                    {
+                        nome:'O Serviço de Entregas da Kiki',
+                        contagem: 0
+                    },
+                    {
+                        nome: 'Ponyo',
+                        contagem: 0
+                    },
+                    {
+                        nome: 'Porco Rosso: O Último Herói Romântico',
+                        contagem: 0
+                    },
+                    {
+                        nome: 'O Reino dos Gatos',
+                        contagem: 0
+                    },
+                    {
+                        nome: 'Vidas ao Vento',
+                        contagem: 0
+                    },
+                    {
+                        nome: 'O Mundo dos Pequeninos',
+                        contagem: 0
+                    },
+                    {
+                        nome: 'As Memórias de Marnie',
+                        contagem: 0
+                    },
+                    {
+                        nome: 'Contos de Terramar',
+                        contagem: 0
+                    }];
+                    
                     data.datasets[0].data = [];
-
-                    criar_grafico(resposta)
+                    for (let index = 0; index < filmes_contagem.length; index++) {
+                        for (let i = 0; i < resposta.length; i++) {
+                            if (filmes_contagem[index].nome == resposta[i].nome) {
+                                filmes_contagem[index].contagem = resposta[i].contagem;
+                            }
+                        }
+                    }
+                    criar_grafico(filmes_contagem)
                 });
             } else {
                 throw ('Houve um erro na API!');
@@ -177,10 +235,11 @@
             console.error(resposta);
         });
     }
-    function criar_grafico(resposta) {
 
-        for (i = 0; i < resposta.length; i++) {
-            var qtd_votos = resposta[i].contagem;
+    function criar_grafico(filmes_contagem) {
+
+        for (let i = 0; i < filmes_contagem.length; i++) {
+            var qtd_votos = filmes_contagem[i].contagem;
             data.datasets[0].data.push(qtd_votos);
             console.log(data.datasets[0].data)
         }
@@ -227,13 +286,9 @@
         config
     );
 
-    acrescentar_voto();
-
-
-
-
 </script>
 
+<!-- Indicação de Filme -->
 <script>
     var filmes = ['O Castelo Animado', 'A Viagem de Chihiro', 'O Reino dos Gatos', 'Ponyo', 'Contos de Terramar'];
     function indicar() {
@@ -244,19 +299,24 @@
             resultado_indicacao.innerHTML += `${index + 1} - ${filmes[index]}<br><br>`;
         }
     }
+
+    function deslogar() {
+        sessionStorage.NOME_USUARIO = "";
+        sessionStorage.EMAIL_USUARIO = "";
+    }
 </script>
 
 <script>
     var votoVar = 0;
-
+    
+    // selecionando o filme do usuário
     function armazenar_voto(voto, banner) {
         votoVar = voto;
-        console.log(banner);
         var divs = document.getElementsByClassName("poster_tudo");
-        console.log(divs);
-
-        for (let i = 0; i < divs.length; i++) {
-            console.log(divs[i]);
+        
+            botão_conf.style.display = "block";
+        
+        for (let i = 0; i < 12; i++) {
             divs[i].style.transform = "scale(1)";
         }
 
@@ -265,6 +325,7 @@
 
     var idUsuario = sessionStorage.ID_USUARIO;
 
+    // guarda no banco de dados (insert)
     function votar() {
         fetch("/avisos/votar", {
             method: "POST",
@@ -282,7 +343,7 @@
             if (resposta.ok) {
 
                 acrescentar_voto();
-
+                console.log(votoVar);
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -320,7 +381,7 @@
     }
 
     function refazer_voto() {
-        confirmar_voto.style.display = "block";
+        confirmar_voto.style.display = "none";
         refazer_o_voto.style.display = "none";
         fileiras1.style.display = "flex";
         fileiras2.style.display = "flex";
@@ -330,6 +391,8 @@
     
 </script>
 <script>
+
+    // body onload
     function select_voto() {
         var idUsuario = sessionStorage.ID_USUARIO;
 
@@ -339,9 +402,10 @@
 
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
 
-                    if (resposta == []) {
+                    if (resposta.length == 0) {
                         sem_voto()
                     } else {
+                        console.log(resposta)
                         com_voto()
                     }
 
@@ -363,7 +427,6 @@
         }).then(function (resposta) {
             
             if (resposta.ok) {
-                sem_voto();
                 acrescentar_voto();
             }
         }).catch(function (resposta) {

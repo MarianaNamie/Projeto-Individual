@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,12 +11,15 @@
 
     <link rel="stylesheet" href="CSS/sobre_nos_estilo.css">
     <link rel="stylesheet" href="CSS/popup_estilo.css">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Grandstander&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Merriweather:wght@400;600;700&family=PT+Serif&family=Playfair+Display:wght@400;500;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Grandstander&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Merriweather:wght@400;600;700&family=PT+Serif&family=Playfair+Display:wght@400;500;800&display=swap"
+        rel="stylesheet">
 
 </head>
+
 <body>
     <!-- BANNER -->
     <header>
@@ -35,17 +39,22 @@
                                 <div class="popup_conteudo">
                                     <div class="telaCadastro">
                                         <div class="formularioCadastro">
-                                            <div class="conteudoCadastro">                
+                                            <div class="conteudoCadastro">
                                                 <h1>Cadastre sua Conta</h1>
                                                 <div class="inputCadastro">
-                                                    <input type="text" id="" placeholder="Nome">
-                                                    <input type="text" id="" placeholder="Sobrenome">
-                                                    <input type="text" id="" placeholder="E-mail">
-                                                    <input type="password" id="" placeholder="Senha">
-                                                    <input type="password" id="" placeholder="Confirmação de Senha">
+                                                    <input type="text" id="" placeholder="Nome" onchange="sem_borda(1)">
+                                                    <input type="text" id="" placeholder="Sobrenome"
+                                                        onchange="sem_borda(2)">
+                                                    <input type="text" id="" placeholder="E-mail"
+                                                        onchange="sem_borda(3)">
+                                                    <input type="password" id="" placeholder="Senha"
+                                                        onchange="sem_borda(4)">
+                                                    <input type="password" id="" placeholder="Confirmação de Senha"
+                                                        onchange="sem_borda(5)">
                                                 </div>
                                                 <button class="botaoCadastrar">Cadastrar</button>
-                                                <p>Já tem uma conta? <b><a onclick="abrirLogin()"><u>Clique aqui</u></a></b> para Entrar</p>
+                                                <p>Já tem uma conta? <b><a onclick="abrirLogin()"><u>Clique
+                                                                aqui</u></a></b> para Entrar</p>
                                             </div>
                                         </div>
                                         <div class="imgCadastro">
@@ -54,7 +63,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <!-- fim do botao -->
                             <!-- inicio do login -->
 
@@ -62,14 +71,15 @@
                                 <div class="popup_conteudo_login">
                                     <div class="telaLogin">
                                         <div class="formularioLogin">
-                                            <div class="conteudoLogin">                
+                                            <div class="conteudoLogin">
                                                 <h1>Olá Novamente!</h1>
                                                 <div class="inputLogin">
-                                                    <input type="text" placeholder="E-mail">
-                                                    <input type="password" placeholder="Senha">
+                                                    <input type="text" placeholder="E-mail" onchange="sem_borda(6)">
+                                                    <input type="password" placeholder="Senha" onchange="sem_borda(7)">
                                                 </div>
                                                 <button class="botaoEntrar">Entrar</button>
-                                                <p>Não tem uma conta? <b><a onclick="abrirCadastro()"><u>Clique aqui</u></a></b> para Cadastrar</p>
+                                                <p>Não tem uma conta? <b><a onclick="abrirCadastro()"><u>Clique
+                                                                aqui</u></a></b> para Cadastrar</p>
                                             </div>
                                         </div>
                                         <div class="imgLogin">
@@ -81,7 +91,7 @@
 
                             <!-- fim do login -->
                         </ul>
-                    </div>  
+                    </div>
                 </div>
             </nav>
             <div class="texto_pai">
@@ -97,9 +107,11 @@
             <div class="tudo_aba">
                 <div class="texto_sophie">
                     <h1>Sophie Hatter</h1>
-                    <p>É uma jovem de 18 anos amaldiçõada pela Bruxa das Terras Abandonadas, e ganha uma aparência que condiz com a idade de sua alma.</p>
+                    <p>É uma jovem de 18 anos amaldiçõada pela Bruxa das Terras Abandonadas, e ganha uma aparência que
+                        condiz com a idade de sua alma.</p>
                     <p>Ela se torna uma velha de 90 anos por não ter alegria ao viver.</p>
-                    <p>Devido ao seu amor por Howl, a aparência geriátrica de Sophie diminui dependendo de seu estado emocional.</p>
+                    <p>Devido ao seu amor por Howl, a aparência geriátrica de Sophie diminui dependendo de seu estado
+                        emocional.</p>
                     <p>Ao defender Howl para Suliman, Sophie recupera brevemente sua aparência original.</p>
                 </div>
                 <div class="foto_sophie">
@@ -140,19 +152,19 @@
             </div>
         </div>
     </div>
-<!-- FOOTER -->
-<div class="footer">
-    <div class="caixa_verde">
-        <div class="info">
-            <p>Developed by Mariana Namie</p>
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="caixa_verde">
+            <div class="info">
+                <p>Developed by Mariana Namie</p>
+            </div>
         </div>
     </div>
-</div>
 </body>
+
 </html>
 
 <script>
-    // txt1.style.display = 'none';
 
     function naoDizer1() {
         txt1.style.display = 'none';
@@ -179,7 +191,7 @@
         txt2.style.textAlign = 'center';
         txt2.style.width = '200px';
     }
-    
+
     function naoDizer3() {
         txt3.style.display = 'none';
     }
@@ -202,16 +214,21 @@
 
     // abrir com clique
     botao.addEventListener('click', abrirPopup);
-    
+
     // fechar com clique no botao
     popup_fechar.addEventListener('click', fecharPopup);
-    
+
     // fechar com clique fora do popup
     window.addEventListener('click', fecharFora);
 
     // função para abrir com o clique
     function abrirPopup() {
         popup.style.display = 'block';
+        inp_nome.value = "";
+        inp_sobrenome.value = "";
+        inp_email.value = "";
+        inp_senha.value = "";
+        inp_confirmacao.value = "";
     }
 
     // função para fechar popup com o clique no botão
@@ -237,6 +254,8 @@
     function abrirLogin() {
         popup.style.display = 'none';
         popupLogin.style.display = 'block';
+        inp_email1.value = "";
+        inp_senha1.value = "";
     }
 
     function fecharPopupLogin() {
@@ -264,40 +283,66 @@
         var senhaVar = inp_senha.value;
         var confirmacaoVar = inp_confirmacao.value;
 
-        if (nomeVar == "" || sobrenomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoVar == "") {
-            alert(`Preencha todos os campos`)
+        if (nomeVar == "") {
+            alerta_erro.innerHTML = `<span style="color:red">* Preencha o nome para Cadasatrar</span>`;
+            inp_nome.style = "border-bottom: solid 2px red;";
+        } else if (sobrenomeVar == "") {
+            alerta_erro.innerHTML = `<span style="color:red">* Preencha o sobrenome para Cadasatrar</span>`
+            inp_sobrenome.style = "border-bottom: solid 2px red;";
+        } else if (emailVar == "") {
+            alerta_erro.innerHTML = `<span style="color:red">* Preencha o email para Cadasatrar</span>`
+            inp_email.style = "border-bottom: solid 2px red;";
+        } else if (senhaVar == "") {
+            alerta_erro.innerHTML = `<span style="color:red">* Preencha a senha para Cadasatrar</span>`
+            inp_senha.style = "border-bottom: solid 2px red;";
+        } else if (confirmacaoVar == "") {
+            alerta_erro.innerHTML = `<span style="color:red">* Preencha a senha para Cadasatrar</span>`
+            inp_confirmacao = "border-bottom: solid 2px red;";
+        } else if (senhaVar != confirmacaoVar) {
+            alerta_erro.innerHTML = `<span style="color:red">* A confirmação de senha deve ser igual a senha</span>`
+        } else {
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    nomeServer: nomeVar,
+                    sobrenomeServer: sobrenomeVar,
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+
+                    setTimeout(() => {
+                        abrirLogin();
+                    }, "2000")
+
+                    limparFormulario();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+            });
+
             return false;
+
         }
 
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                nomeServer: nomeVar,
-                sobrenomeServer: sobrenomeVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
+    }
 
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-
-                setTimeout(() => {
-                    abrirLogin();
-                }, "2000")
-                
-                limparFormulario();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-        });
-
-        return false;
+    function sem_borda() {
+        inp_nome.style = "border-bottom: solid 2px grey;";
+        inp_sobrenome.style = "border-bottom: solid 2px grey;";
+        inp_email.style = "border-bottom: solid 2px grey;";
+        inp_senha.style = "border-bottom: solid 2px grey;";
+        inp_confirmacao.style = "border-bottom: solid 2px grey;";
+        inp_email1.style = "border-bottom: solid 2px grey;";
+        inp_senha1.style = "border-bottom: solid 2px grey;";
     }
 </script>
 <!-- login -->

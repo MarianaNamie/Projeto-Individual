@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,14 +13,17 @@
 
     <link rel="stylesheet" href="CSS/estilo.css">
     <link rel="stylesheet" href="CSS/popup_estilo.css">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Grandstander&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Merriweather:wght@400;600;700&family=PT+Serif&family=Playfair+Display:wght@400;500;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Grandstander&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Merriweather:wght@400;600;700&family=PT+Serif&family=Playfair+Display:wght@400;500;800&display=swap"
+        rel="stylesheet">
 
 </head>
+
 <body>
-<!-- BANNER -->
+    <!-- BANNER -->
     <header>
         <div class="banner">
             <nav class="degradê">
@@ -38,17 +42,24 @@
                                 <div class="popup_conteudo">
                                     <div class="telaCadastro">
                                         <div class="formularioCadastro">
-                                            <div class="conteudoCadastro">                
+                                            <div class="conteudoCadastro">
                                                 <h1>Cadastre sua Conta</h1>
+                                                <div id="alerta_erro"></div>
                                                 <div class="inputCadastro">
-                                                    <input type="text" id="inp_nome" placeholder="Nome">
-                                                    <input type="text" id="inp_sobrenome" placeholder="Sobrenome">
-                                                    <input type="text" id="inp_email" placeholder="E-mail">
-                                                    <input type="password" id="inp_senha" placeholder="Senha">
-                                                    <input type="password" id="inp_confirmacao" placeholder="Confirmação de Senha">
+                                                    <input type="text" id="inp_nome" placeholder="Nome"
+                                                        onchange="sem_borda(1)">
+                                                    <input type="text" id="inp_sobrenome" placeholder="Sobrenome"
+                                                        onchange="sem_borda(2)">
+                                                    <input type="text" id="inp_email" placeholder="E-mail"
+                                                        onchange="sem_borda(3)">
+                                                    <input type="password" id="inp_senha" placeholder="Senha"
+                                                        onchange="sem_borda(4)">
+                                                    <input type="password" id="inp_confirmacao"
+                                                        placeholder="Confirmação de Senha" onchange="sem_borda(5)">
                                                 </div>
                                                 <button class="botaoCadastrar" onclick="cadastrar()">Cadastrar</button>
-                                                <p>Já tem uma conta? <b><a onclick="abrirLogin()"><u>Clique aqui</u></a></b> para Entrar</p>
+                                                <p>Já tem uma conta? <b><a onclick="abrirLogin()"><u>Clique
+                                                                aqui</u></a></b> para Entrar</p>
                                             </div>
                                         </div>
                                         <div class="imgCadastro">
@@ -57,7 +68,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <!-- fim do botao -->
                             <!-- inicio do login -->
 
@@ -65,14 +76,16 @@
                                 <div class="popup_conteudo_login">
                                     <div class="telaLogin">
                                         <div class="formularioLogin">
-                                            <div class="conteudoLogin">                
+                                            <div class="conteudoLogin">
                                                 <h1>Olá Novamente!</h1>
+                                                <div id="alerta_erro"></div>
                                                 <div class="inputLogin">
-                                                    <input type="text" placeholder="E-mail" id="inp_email1">
-                                                    <input type="password" placeholder="Senha" id="inp_senha1">
+                                                    <input type="text" placeholder="E-mail" id="inp_email1" onchange="sem_borda(6)">
+                                                    <input type="password" placeholder="Senha" id="inp_senha1"onchange="sem_borda(7)">
                                                 </div>
                                                 <button class="botaoEntrar" onclick="entrar()">Entrar</button>
-                                                <p>Não tem uma conta? <b><a onclick="abrirCadastro()"><u>Clique aqui</u></a></b> para Cadastrar</p>
+                                                <p>Não tem uma conta? <b><a onclick="abrirCadastro()"><u>Clique
+                                                                aqui</u></a></b> para Cadastrar</p>
                                             </div>
                                         </div>
                                         <div class="imgLogin">
@@ -84,7 +97,7 @@
 
                             <!-- fim do login -->
                         </ul>
-                    </div>  
+                    </div>
                 </div>
             </nav>
             <div class="text_banner">
@@ -92,8 +105,8 @@
                 <p>Um filme estreado nos cinemas no dia 5 de agosto de 2005</p>
                 <p>Gênero: Fantasia / Animação</p>
                 <p>Dirigido por Hayao Miyazaki</p>
-                <div class="button">                  
-                    <a href="#sessao1">SAIBA MAIS</a>               
+                <div class="button">
+                    <a href="#sessao1">SAIBA MAIS</a>
                 </div>
             </div>
         </div>
@@ -121,27 +134,37 @@
             </div>
         </div>
     </div>
-<!-- SINOPSE -->
+    <!-- SINOPSE -->
     <div class="sinopse" id="sessao1">
         <div class="imagem"></div>
         <div class="fundo_verde">
             <div class="texto">
                 <h1>SINOPSE</h1>
-                <p>Uma bruxa lança uma terrível maldição sobre a jovem Sophie transformando-a numa velha de 90 anos. Desesperada, ela embarca numa odisseia em busca do Castelo Andante, onde reside um misterioso feiticeiro que poderá ajudá-la a reverter o feitiço.</p>
+                <p>Uma bruxa lança uma terrível maldição sobre a jovem Sophie transformando-a numa velha de 90 anos.
+                    Desesperada, ela embarca numa odisseia em busca do Castelo Andante, onde reside um misterioso
+                    feiticeiro que poderá ajudá-la a reverter o feitiço.</p>
             </div>
         </div>
     </div>
-<!-- REPERCUSSÃO MUNDIAL -->
+    <!-- REPERCUSSÃO MUNDIAL -->
     <div class="container">
         <div class="texto">
             <h1>Repercussão Mundial</h1>
-            <p>A história se passa em um reino fictício, onde a magia e a tecnologia do início do século XX são predominantes, no contexto de uma guerra com outro reino.</p>
-            <p>Inspirada pela oposição à invasão do Iraque pelos Estados Unidos em 2003, o filme contém fortes temas anti-guerra. Miyazaki afirmou que tinha muita raiva da guerra do Iraque, o que o levou a fazer um filme que ele achava que seria mal recebido nos EUA. Também explora o tema da velhice, retratando a idade positivamente como algo que concede liberdade ao protagonista. O filme também contém elementos feministas e traz mensagens sobre o valor da compaixão.
+            <p>A história se passa em um reino fictício, onde a magia e a tecnologia do início do século XX são
+                predominantes, no contexto de uma guerra com outro reino.</p>
+            <p>Inspirada pela oposição à invasão do Iraque pelos Estados Unidos em 2003, o filme contém fortes temas
+                anti-guerra. Miyazaki afirmou que tinha muita raiva da guerra do Iraque, o que o levou a fazer um filme
+                que ele achava que seria mal recebido nos EUA. Também explora o tema da velhice, retratando a idade
+                positivamente como algo que concede liberdade ao protagonista. O filme também contém elementos
+                feministas e traz mensagens sobre o valor da compaixão.
             </p>
-            <p>O filme arrecadou US$ 190 milhões de dólares no Japão e US$ 236 milhões em todo o mundo, tornando-o um dos filmes japoneses mais bem-sucedidos financeiramente da história. O filme recebeu elogios da crítica, principalmente pelo seu visual e pela apresentação dos temas por Miyazaki. Ganhou vários prêmios, incluindo quatro Tokyo Anime Awards e um Nebula Award por Melhor Roteiro.</p>
+            <p>O filme arrecadou US$ 190 milhões de dólares no Japão e US$ 236 milhões em todo o mundo, tornando-o um
+                dos filmes japoneses mais bem-sucedidos financeiramente da história. O filme recebeu elogios da crítica,
+                principalmente pelo seu visual e pela apresentação dos temas por Miyazaki. Ganhou vários prêmios,
+                incluindo quatro Tokyo Anime Awards e um Nebula Award por Melhor Roteiro.</p>
         </div>
     </div>
-<!-- FOOTER -->
+    <!-- FOOTER -->
     <div class="footer">
         <div class="caixa_verde">
             <div class="info">
@@ -150,6 +173,7 @@
         </div>
     </div>
 </body>
+
 </html>
 
 <!-- modal -->
@@ -163,16 +187,21 @@
 
     // abrir com clique
     botao.addEventListener('click', abrirPopup);
-    
+
     // fechar com clique no botao
     popup_fechar.addEventListener('click', fecharPopup);
-    
+
     // fechar com clique fora do popup
     window.addEventListener('click', fecharFora);
 
     // função para abrir com o clique
     function abrirPopup() {
         popup.style.display = 'block';
+        inp_nome.value = "";
+        inp_sobrenome.value = "";
+        inp_email.value = "";
+        inp_senha.value = "";
+        inp_confirmacao.value = "";
     }
 
     // função para fechar popup com o clique no botão
@@ -198,6 +227,8 @@
     function abrirLogin() {
         popup.style.display = 'none';
         popupLogin.style.display = 'block';
+        inp_email1.value = "";
+        inp_senha1.value = "";
     }
 
     function fecharPopupLogin() {
@@ -225,40 +256,66 @@
         var senhaVar = inp_senha.value;
         var confirmacaoVar = inp_confirmacao.value;
 
-        if (nomeVar == "" || sobrenomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoVar == "") {
-            alert(`Preencha todos os campos`)
+        if (nomeVar == "") {
+            alerta_erro.innerHTML = `<span style="color:red">* Preencha o nome para Cadasatrar</span>`;
+            inp_nome.style = "border-bottom: solid 2px red;";
+        } else if (sobrenomeVar == "") {
+            alerta_erro.innerHTML = `<span style="color:red">* Preencha o sobrenome para Cadasatrar</span>`
+            inp_sobrenome.style = "border-bottom: solid 2px red;";
+        } else if (emailVar == "") {
+            alerta_erro.innerHTML = `<span style="color:red">* Preencha o email para Cadasatrar</span>`
+            inp_email.style = "border-bottom: solid 2px red;";
+        } else if (senhaVar == "") {
+            alerta_erro.innerHTML = `<span style="color:red">* Preencha a senha para Cadasatrar</span>`
+            inp_senha.style = "border-bottom: solid 2px red;";
+        } else if (confirmacaoVar == "") {
+            alerta_erro.innerHTML = `<span style="color:red">* Preencha a senha para Cadasatrar</span>`
+            inp_confirmacao = "border-bottom: solid 2px red;";
+        } else if (senhaVar != confirmacaoVar) {
+            alerta_erro.innerHTML = `<span style="color:red">* A confirmação de senha deve ser igual a senha</span>`
+        } else {
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    nomeServer: nomeVar,
+                    sobrenomeServer: sobrenomeVar,
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+
+                    setTimeout(() => {
+                        abrirLogin();
+                    }, "2000")
+
+                    limparFormulario();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+            });
+
             return false;
+
         }
 
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                nomeServer: nomeVar,
-                sobrenomeServer: sobrenomeVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
+    }
 
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-
-                setTimeout(() => {
-                    abrirLogin();
-                }, "2000")
-                
-                limparFormulario();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-        });
-
-        return false;
+    function sem_borda() {
+        inp_nome.style = "border-bottom: solid 2px grey;";
+        inp_sobrenome.style = "border-bottom: solid 2px grey;";
+        inp_email.style = "border-bottom: solid 2px grey;";
+        inp_senha.style = "border-bottom: solid 2px grey;";
+        inp_confirmacao.style = "border-bottom: solid 2px grey;";
+        inp_email1.style = "border-bottom: solid 2px grey;";
+        inp_senha1.style = "border-bottom: solid 2px grey;";
     }
 </script>
 <!-- login -->
@@ -268,52 +325,57 @@
         var emailVar = inp_email1.value;
         var senhaVar = inp_senha1.value;
 
-        if (emailVar == "" || senhaVar == "") {
-            alert(`Preencha todos os campos`)
+        if (emailVar == "") {
+            alerta_erro.innerHTML = `<span style="color:red">* Preencha o email para Entrar</span>`;
+            inp_email1.style = "border-bottom: solid 2px red;";
+        } else if (senhaVar == "") {
+            alerta_erro.innerHTML = `<span style="color:red">* Preencha a senha para Entrar</span>`;
+            inp_senha1.style = "border-bottom: solid 2px red;";
+        } else {
+
+            fetch("/usuarios/autenticar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
+
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.ID_USUARIO = json.idUsuario;
+
+                        setTimeout(function () {
+                            console.log("cheguei ate aqui")
+                            window.location = "interacao.html";
+                        }, 1000); // apenas para exibir o loading
+
+                    });
+
+                } else {
+
+                    console.log("Houve um erro ao tentar realizar o login!");
+
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                    });
+                }
+
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+
             return false;
         }
-
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.idUsuario;
-
-                    setTimeout(function () {
-                        console.log("cheguei ate aqui")
-                        window.location = "interacao.html";
-                    }, 1000); // apenas para exibir o loading
-
-                });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
-        return false;
     }
+
 </script>
