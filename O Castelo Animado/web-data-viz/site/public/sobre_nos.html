@@ -42,17 +42,18 @@
                                             <div class="conteudoCadastro">
                                                 <h1>Cadastre sua Conta</h1>
                                                 <div class="inputCadastro">
-                                                    <input type="text" id="" placeholder="Nome" onchange="sem_borda(1)">
-                                                    <input type="text" id="" placeholder="Sobrenome"
+                                                    <input type="text" id="inp_nome2" placeholder="Nome"
+                                                        onchange="sem_borda(1)">
+                                                    <input type="text" id="inp_sobrenome2" placeholder="Sobrenome"
                                                         onchange="sem_borda(2)">
-                                                    <input type="text" id="" placeholder="E-mail"
+                                                    <input type="text" id="inp_email2" placeholder="E-mail"
                                                         onchange="sem_borda(3)">
-                                                    <input type="password" id="" placeholder="Senha"
+                                                    <input type="password" id="inp_senha2" placeholder="Senha"
                                                         onchange="sem_borda(4)">
-                                                    <input type="password" id="" placeholder="Confirmação de Senha"
-                                                        onchange="sem_borda(5)">
+                                                    <input type="password" id="inp_confirmacao2"
+                                                        placeholder="Confirmação de Senha" onchange="sem_borda(5)">
                                                 </div>
-                                                <button class="botaoCadastrar">Cadastrar</button>
+                                                <button class="botaoCadastrar" onclick="cadastrar()">Cadastrar</button>
                                                 <p>Já tem uma conta? <b><a onclick="abrirLogin()"><u>Clique
                                                                 aqui</u></a></b> para Entrar</p>
                                             </div>
@@ -74,10 +75,12 @@
                                             <div class="conteudoLogin">
                                                 <h1>Olá Novamente!</h1>
                                                 <div class="inputLogin">
-                                                    <input type="text" placeholder="E-mail" onchange="sem_borda(6)">
-                                                    <input type="password" placeholder="Senha" onchange="sem_borda(7)">
+                                                    <input type="text" placeholder="E-mail" id="inp_email3"
+                                                        onchange="sem_borda(6)">
+                                                    <input type="password" placeholder="Senha" id="inp_senha3"
+                                                        onchange="sem_borda(7)">
                                                 </div>
-                                                <button class="botaoEntrar">Entrar</button>
+                                                <button class="botaoEntrar" onclick="entrar()">Entrar</button>
                                                 <p>Não tem uma conta? <b><a onclick="abrirCadastro()"><u>Clique
                                                                 aqui</u></a></b> para Cadastrar</p>
                                             </div>
@@ -224,11 +227,11 @@
     // função para abrir com o clique
     function abrirPopup() {
         popup.style.display = 'block';
-        inp_nome.value = "";
-        inp_sobrenome.value = "";
-        inp_email.value = "";
-        inp_senha.value = "";
-        inp_confirmacao.value = "";
+        inp_nome2.value = "";
+        inp_sobrenome2.value = "";
+        inp_email2.value = "";
+        inp_senha2.value = "";
+        inp_confirmacao2.value = "";
     }
 
     // função para fechar popup com o clique no botão
@@ -254,8 +257,8 @@
     function abrirLogin() {
         popup.style.display = 'none';
         popupLogin.style.display = 'block';
-        inp_email1.value = "";
-        inp_senha1.value = "";
+        inp_email3.value = "";
+        inp_senha3.value = "";
     }
 
     function fecharPopupLogin() {
@@ -277,27 +280,27 @@
 <script>
     function cadastrar() {
 
-        var nomeVar = inp_nome.value;
-        var sobrenomeVar = inp_sobrenome.value;
-        var emailVar = inp_email.value;
-        var senhaVar = inp_senha.value;
-        var confirmacaoVar = inp_confirmacao.value;
+        var nomeVar = inp_nome2.value;
+        var sobrenomeVar = inp_sobrenome2.value;
+        var emailVar = inp_email2.value;
+        var senhaVar = inp_senha2.value;
+        var confirmacaoVar = inp_confirmacao2.value;
 
         if (nomeVar == "") {
             alerta_erro.innerHTML = `<span style="color:red">* Preencha o nome para Cadasatrar</span>`;
-            inp_nome.style = "border-bottom: solid 2px red;";
+            inp_nome2.style = "border-bottom: solid 2px red;";
         } else if (sobrenomeVar == "") {
             alerta_erro.innerHTML = `<span style="color:red">* Preencha o sobrenome para Cadasatrar</span>`
-            inp_sobrenome.style = "border-bottom: solid 2px red;";
+            inp_sobrenome2.style = "border-bottom: solid 2px red;";
         } else if (emailVar == "") {
             alerta_erro.innerHTML = `<span style="color:red">* Preencha o email para Cadasatrar</span>`
-            inp_email.style = "border-bottom: solid 2px red;";
+            inp_email2.style = "border-bottom: solid 2px red;";
         } else if (senhaVar == "") {
             alerta_erro.innerHTML = `<span style="color:red">* Preencha a senha para Cadasatrar</span>`
-            inp_senha.style = "border-bottom: solid 2px red;";
+            inp_senha2.style = "border-bottom: solid 2px red;";
         } else if (confirmacaoVar == "") {
             alerta_erro.innerHTML = `<span style="color:red">* Preencha a senha para Cadasatrar</span>`
-            inp_confirmacao = "border-bottom: solid 2px red;";
+            inp_confirmacao2.value = "border-bottom: solid 2px red;";
         } else if (senhaVar != confirmacaoVar) {
             alerta_erro.innerHTML = `<span style="color:red">* A confirmação de senha deve ser igual a senha</span>`
         } else {
@@ -336,73 +339,72 @@
     }
 
     function sem_borda() {
-        inp_nome.style = "border-bottom: solid 2px grey;";
-        inp_sobrenome.style = "border-bottom: solid 2px grey;";
-        inp_email.style = "border-bottom: solid 2px grey;";
-        inp_senha.style = "border-bottom: solid 2px grey;";
-        inp_confirmacao.style = "border-bottom: solid 2px grey;";
-        inp_email1.style = "border-bottom: solid 2px grey;";
-        inp_senha1.style = "border-bottom: solid 2px grey;";
+        inp_nome2.style = "border-bottom: solid 2px grey;";
+        inp_sobrenome2.style = "border-bottom: solid 2px grey;";
+        inp_email2.style = "border-bottom: solid 2px grey;";
+        inp_senha2.style = "border-bottom: solid 2px grey;";
+        inp_confirmacao2.style = "border-bottom: solid 2px grey;";
+        inp_email3.style = "border-bottom: solid 2px grey;";
+        inp_senha3.style = "border-bottom: solid 2px grey;";
     }
 </script>
 <!-- login -->
 <script>
     function entrar() {
 
-        var emailVar = inp_email1.value;
-        var senhaVar = inp_senha1.value;
+        var emailVar = inp_email3.value;
+        var senhaVar = inp_senha3.value;
 
-        if (emailVar == "" || senhaVar == "") {
-            alert(`Preencha todos os campos`)
+        if (emailVar == "") {
+            alerta_erro.innerHTML = `<span style="color:red">* Preencha o email para Entrar</span>`;
+            inp_email3.style = "border-bottom: solid 2px red;";
+        } else if (senhaVar == "") {
+            alerta_erro.innerHTML = `<span style="color:red">* Preencha a senha para Entrar</span>`;
+            inp_senha3.style = "border-bottom: solid 2px red;";
+        } else {
+
+            fetch("/usuarios/autenticar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
+
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.ID_USUARIO = json.idUsuario;
+
+                        setTimeout(function () {
+                            console.log("cheguei ate aqui")
+                            window.location = "interacao.html";
+                        }, 1000); // apenas para exibir o loading
+
+                    });
+
+                } else {
+
+                    console.log("Houve um erro ao tentar realizar o login!");
+
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                    });
+                }
+
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+
             return false;
         }
-
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
-
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.idUsuario;
-
-                    setTimeout(function () {
-                        console.log("cheguei ate aqui")
-                        window.location = "interacao.html";
-                    }, 1000); // apenas para exibir o loading
-
-                });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
-        return false;
     }
 </script>

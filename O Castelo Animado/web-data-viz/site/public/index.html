@@ -270,7 +270,7 @@
             inp_senha.style = "border-bottom: solid 2px red;";
         } else if (confirmacaoVar == "") {
             alerta_erro.innerHTML = `<span style="color:red">* Preencha a senha para Cadasatrar</span>`
-            inp_confirmacao = "border-bottom: solid 2px red;";
+            inp_confirmacao.value = "border-bottom: solid 2px red;";
         } else if (senhaVar != confirmacaoVar) {
             alerta_erro.innerHTML = `<span style="color:red">* A confirmação de senha deve ser igual a senha</span>`
         } else {
