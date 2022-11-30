@@ -82,3 +82,19 @@ insert into usuario values
 	(null, 'Mateus', 'Joaquim', 'mateus@gmail.com', 123);
         
 Select * from votacao where fkUsuario = 1;
+
+insert into votacao values
+	(null, now(), 1, 3),
+	(null, now(), 2, 12),
+	(null, now(), 3, 1),
+	(null, now(), 4, 1),
+	(null, now(), 5, 1),
+	(null, now(), 6, 12),
+	(null, now(), 7, 3),
+	(null, now(), 8, 2),
+	(null, now(), 9, 4),
+	(null, now(), 10, 5),
+	(null, now(), 11, 6),
+	(null, now(), 12, 8),
+	(null, now(), 13, 9),
+	(null, now(), 14, 10);

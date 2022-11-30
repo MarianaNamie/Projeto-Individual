@@ -257,22 +257,22 @@
         var confirmacaoVar = inp_confirmacao.value;
 
         if (nomeVar == "") {
-            alerta_erro.innerHTML = `<span style="color:red">* Preencha o nome para Cadasatrar</span>`;
+            alerta_erro.innerHTML = `<span style="color:red">Preencha o nome para Cadasatrar</span>`;
             inp_nome.style = "border-bottom: solid 2px red;";
         } else if (sobrenomeVar == "") {
-            alerta_erro.innerHTML = `<span style="color:red">* Preencha o sobrenome para Cadasatrar</span>`
+            alerta_erro.innerHTML = `<span style="color:red">Preencha o sobrenome para Cadasatrar</span>`
             inp_sobrenome.style = "border-bottom: solid 2px red;";
-        } else if (emailVar == "") {
-            alerta_erro.innerHTML = `<span style="color:red">* Preencha o email para Cadasatrar</span>`
+        } else if (emailVar == "" || emailVar.indexOf('@') == -1 || emailVar.indexOf('.com') == -1) {
+            alerta_erro.innerHTML = `<span style="color:red">Preencha o email corretamente para Cadasatrar</span>`
             inp_email.style = "border-bottom: solid 2px red;";
         } else if (senhaVar == "") {
-            alerta_erro.innerHTML = `<span style="color:red">* Preencha a senha para Cadasatrar</span>`
+            alerta_erro.innerHTML = `<span style="color:red">Preencha a senha para Cadasatrar</span>`
             inp_senha.style = "border-bottom: solid 2px red;";
         } else if (confirmacaoVar == "") {
-            alerta_erro.innerHTML = `<span style="color:red">* Preencha a senha para Cadasatrar</span>`
+            alerta_erro.innerHTML = `<span style="color:red">Preencha a senha para Cadasatrar</span>`
             inp_confirmacao.value = "border-bottom: solid 2px red;";
         } else if (senhaVar != confirmacaoVar) {
-            alerta_erro.innerHTML = `<span style="color:red">* A confirmação de senha deve ser igual a senha</span>`
+            alerta_erro.innerHTML = `<span style="color:red">A confirmação de senha deve ser igual a senha</span>`
         } else {
             fetch("/usuarios/cadastrar", {
                 method: "POST",
@@ -325,8 +325,8 @@
         var emailVar = inp_email1.value;
         var senhaVar = inp_senha1.value;
 
-        if (emailVar == "") {
-            alerta_erro.innerHTML = `<span style="color:red">* Preencha o email para Entrar</span>`;
+        if (emailVar == "" || emailVar.indexOf('@') == -1 || emailVar.indexOf('.com') == -1) {
+            alerta_erro.innerHTML = `<span style="color:red">* Preencha o email corretamente para Entrar</span>`;
             inp_email1.style = "border-bottom: solid 2px red;";
         } else if (senhaVar == "") {
             alerta_erro.innerHTML = `<span style="color:red">* Preencha a senha para Entrar</span>`;

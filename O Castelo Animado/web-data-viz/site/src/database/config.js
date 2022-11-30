@@ -18,20 +18,20 @@ var sqlServerConfig = {
 }
 
 // CONEXÃO DO MYSQL WORKBENCH (LOCAL) FACULDADE
-// var mySqlConfig = {
-//     host: "localhost",
-//     database: "OCasteloAnimado",
-//     user: "aluno",
-//     password: "sptech",
-// };
-
-// CONEXÃO DO MYSQL WORKBENCH (LOCAL) CASA
 var mySqlConfig = {
     host: "localhost",
     database: "OCasteloAnimado",
-    user: "root",
-    password: "!Mariana24",
+    user: "aluno",
+    password: "sptech",
 };
+
+// CONEXÃO DO MYSQL WORKBENCH (LOCAL) CASA
+// var mySqlConfig = {
+//     host: "localhost",
+//     database: "OCasteloAnimado",
+//     user: "root",
+//     password: "!Mariana24",
+// };
 
 function executar(instrucao) {
     // VERIFICA A VARIÁVEL DE AMBIENTE SETADA EM app.js

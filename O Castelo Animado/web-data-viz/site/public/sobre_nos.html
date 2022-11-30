@@ -292,7 +292,7 @@
         } else if (sobrenomeVar == "") {
             alerta_erro.innerHTML = `<span style="color:red">* Preencha o sobrenome para Cadasatrar</span>`
             inp_sobrenome2.style = "border-bottom: solid 2px red;";
-        } else if (emailVar == "") {
+        } else if (emailVar == "" || emailVar.indexOf('@') == -1 || emailVar.indexOf('.com') == -1) {
             alerta_erro.innerHTML = `<span style="color:red">* Preencha o email para Cadasatrar</span>`
             inp_email2.style = "border-bottom: solid 2px red;";
         } else if (senhaVar == "") {
@@ -355,7 +355,7 @@
         var emailVar = inp_email3.value;
         var senhaVar = inp_senha3.value;
 
-        if (emailVar == "") {
+        if (emailVar == "" || emailVar.indexOf('@') == -1 || emailVar.indexOf('.com') == -1) {
             alerta_erro.innerHTML = `<span style="color:red">* Preencha o email para Entrar</span>`;
             inp_email3.style = "border-bottom: solid 2px red;";
         } else if (senhaVar == "") {
