@@ -290,15 +290,47 @@
 
 <!-- Indicação de Filme -->
 <script>
-    var filmes = ['O Castelo Animado', 'A Viagem de Chihiro', 'O Reino dos Gatos', 'Ponyo', 'Contos de Terramar'];
+    var filmes = [
+        'A Viagem de Chihiro',
+        'Meu Amigo Totoro',
+        'O Castelo Animado',
+        'Princesa Mononoke',
+        'O Serviço de Entregas da Kiki',
+        'Ponyo',
+        'Porco Rosso: O Último Herói Romântico',
+        'O Reino dos Gatos',
+        'Vidas ao Vento',
+        'O Mundo dos Pequeninos',
+        'As Memórias de Marnie',
+        'Contos de Terramar'
+    ];
+
+    var indicacao = [];
+    
     function indicar() {
         resultado_indicacao.innerHTML = "";
         resultado_indicacao.style.display = 'none';
-        for (let index = 0; index < filmes.length; index++) {
+
+        indicacao = [];
+
+        for (let index = 0; index < 5; index++) {
+            var random = (Math.random() * 11).toFixed(0);
+
+            if (indicacao.length == 0) {
+                indicacao.push(random)
+            } else if (indicacao.indexOf(random) >= 0) {
+                var random = (Math.random() * 11).toFixed(0);
+                return random
+            } else {
+                indicacao.push(random)
+            }
+
             resultado_indicacao.style.display = 'block';
-            resultado_indicacao.innerHTML += `${index + 1} - ${filmes[index]}<br><br>`;
+            resultado_indicacao.innerHTML += `${index + 1} - ${filmes[indicacao[index]]}<br><br>`;
         }
+        
     }
+    console.log(indicacao);
 
     function deslogar() {
         sessionStorage.NOME_USUARIO = "";
